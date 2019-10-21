@@ -186,7 +186,7 @@ void reverse()
 
 void middle()
 {
-    struct node* p, *q;
+    struct node* p=root, *q=root;
     int count=0;
 
 
@@ -194,7 +194,7 @@ void middle()
     {
         count++;
 
-        if(q!=NULL && q->link->link!=NULL)
+        if(q->link!=NULL && q->link->link!=NULL)
         {
             q = q->link->link;
             p = p->link;
@@ -251,9 +251,9 @@ void main()
             break;
             case 7: reverse();
             break;
-            case 8: middle();
+            case 8:  exit(1);
             break;
-            case 9 : exit(1);
+            case 9 : middle();
             default: printf("invalid input\n\n");
         }
 
